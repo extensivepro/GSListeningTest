@@ -21,7 +21,7 @@ UIALogin.test(target);
 UIALogger.logStart("同步考试记录");
 target.delay(2);
 target.frontMostApp().mainWindow().tableViews()[0].logElement();
-var cell = target.frontMostApp().mainWindow().tableViews()[0].cells()["用户资料, 1231@"];
+var cell = target.frontMostApp().mainWindow().tableViews()[0].cells()["用户资料, 123@"];
 if(cell.isValid()) {
     UIALogger.logPass("同步考试记录");
 } else {
