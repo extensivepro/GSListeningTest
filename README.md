@@ -1,7 +1,7 @@
 gs-client-test
 ==============
 
-#金石教育手机版本测试工程
+#[金石教育手机版本](https://github.com/MengWei/gs-client)测试工程
 
 ##安装及使用
 ```bash
@@ -15,6 +15,6 @@ cd gs-client-test/Mother-May-UI
 ```
 
 ##目录说明
-UITest	界面测试的自动化脚本放在这里，运行setup.sh后会自动加入main.js中
-UITest/main.js	测试的入口文件，自动包含目录下面的测试脚本，由setup自动生成
-UITest/uitest.conf	UI测试配置文件由setup.sh自动生成
+* `UITest/`	-界面测试的自动化脚本放在这里，运行setup.sh后会自动加入main.js中
+* `UITest/main.js`	-测试的入口文件，自动包含目录下面的测试脚本，由setup自动生成
+* `UITest/uitest.conf`	-UI测试配置文件由setup.sh自动生成
