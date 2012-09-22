@@ -1,4 +1,4 @@
-
+/*
 var target = UIATarget.localTarget();
 var listIsEmpty = false;
 
@@ -121,4 +121,4 @@ target.delay(1);
 target.frontMostApp().navigationBar().leftButton().tap();
 target.delay(1);
 target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();
-
+*/

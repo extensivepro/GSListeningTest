@@ -1,4 +1,4 @@
-
+/*
 var target = UIATarget.localTarget();
 
 target.delay(2);
@@ -47,3 +47,4 @@ else
 }
 
 UIALogger.logPass("测试完成");
+*/

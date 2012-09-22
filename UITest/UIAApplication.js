@@ -1,4 +1,4 @@
-var succeed = true;
+/*var succeed = true;
 var failed = false;
 
 UIAApplication.prototype.target = UIATarget.localTarget();
@@ -145,4 +145,4 @@ UIAApplication.prototype.error = function (message)
 UIAApplication.prototype.wait = function (second)
 {
     this.target.delay(parseInt(second));
-};
+};*/

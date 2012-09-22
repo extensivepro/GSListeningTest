@@ -1,4 +1,4 @@
-var target = UIATarget.localTarget();
+/*var target = UIATarget.localTarget();
 
 target.delay(2);
 target.frontMostApp().tabBar().buttons()["好友"].tap();
@@ -62,3 +62,4 @@ else
 }
 
 UIALogger.logPass("测试完成");
+*/

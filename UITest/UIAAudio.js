@@ -1,4 +1,4 @@
-#import "UIAApplication.js";
+/*#import "UIAApplication.js";
 
 var gs = UIATarget.localTarget().frontMostApp();
 
@@ -14,4 +14,4 @@ gs.selectCell(0);
 gs.wait(1);
 gs.selectCell("开始考试");
 gs.log("测试完成");
-
+*/

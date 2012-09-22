@@ -1,4 +1,4 @@
-
+/*
 var target = UIATarget.localTarget();
 
 UIALogger.logPass("听写列表测试");
@@ -19,5 +19,5 @@ UIALogger.logPass("听力试卷列表测试成功");
 
 target.frontMostApp().mainWindow().tableViews()["空列表"].cells()["开始考试"].tap();
 UIALogger.logPass("听力开始界面测试成功");
-
+*/
 
