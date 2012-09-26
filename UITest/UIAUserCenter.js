@@ -1,4 +1,5 @@
 #import "UIALogin.js"
+#import "UIAListeningRecord.js"
 
 UIALogger.logStart("用户中心");
 
@@ -28,8 +29,18 @@ if(cell.isValid()) {
     UIALogger.logFail("同步考试记录");
 }
 
+UIALogger.logStart("听力记录折叠");
+target.frontMostApp().mainWindow().tableViews()[0].cells()["听写记录, 4"].tap();
+target.frontMostApp().mainWindow().tableViews()[0].cells()["听写记录, 4"].tap();
+UIALogger.logPass("听力记录折叠");
+
+target.frontMostApp().mainWindow().tableViews()[0].cells()["已做试卷, 4"].tap();
+UIAListeningRecord.showComplete(target);
+
 UIALogger.logDebug("退出登陆状态");
+UIATarget.localTarget().pushTimeout(5);
 target.frontMostApp().navigationBar().rightButton().tap();
+UIATarget.localTarget().popTimeout();
 UIALogger.logPass("用户中心");
 
 
