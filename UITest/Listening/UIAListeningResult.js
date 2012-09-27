@@ -1,4 +1,18 @@
+var UIAListeningResult = {
+	show:function(target) {
+		UIALogger.logStart("听写成绩单");
+		target.frontMostApp().navigationBar().leftButton().tap();
+		UIALogger.logPass("听写成绩单");		
+	}
+}
 /*
+target.frontMostApp().mainWindow().tableViews()["空列表"].cells()["错题回顾:5/5, 详情"].tap();
+target.frontMostApp().navigationBar().rightButton().tap();
+target.frontMostApp().navigationBar().leftButton().tap();
+target.frontMostApp().navigationBar().leftButton().tap();
+target.frontMostApp().navigationBar().leftButton().tap();
+target.frontMostApp().navigationBar().leftButton().tap();
+
 var target = UIATarget.localTarget();
 
 target.delay(2);

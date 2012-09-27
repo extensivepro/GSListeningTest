@@ -1,5 +1,5 @@
-#import "UIALogin.js"
-#import "UIAListeningRecord.js"
+#import "User/UIALogin.js"
+#import "Listening/UIAListeningRecord.js"
 
 UIALogger.logStart("用户中心");
 
@@ -17,7 +17,7 @@ var loginCell = target.frontMostApp().mainWindow().tableViews()[0].cells()["用�
 UIATarget.localTarget().popTimeout();
 loginCell.tap();
 
-UIALogin.test(target);
+UIALogin.login(target);
 
 UIALogger.logStart("同步考试记录");
 target.delay(2);
@@ -30,12 +30,18 @@ if(cell.isValid()) {
 }
 
 UIALogger.logStart("听力记录折叠");
-target.frontMostApp().mainWindow().tableViews()[0].cells()["听写记录, 4"].tap();
-target.frontMostApp().mainWindow().tableViews()[0].cells()["听写记录, 4"].tap();
+cell = target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '听写记录'");
+cell.tap();
+cell.tap();
 UIALogger.logPass("听力记录折叠");
 
-target.frontMostApp().mainWindow().tableViews()[0].cells()["已做试卷, 4"].tap();
+cell = target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '已做试卷'");
+cell.tap();
 UIAListeningRecord.showComplete(target);
+
+cell = target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '错题重做试卷'");
+cell.tap();
+UIAListeningRecord.showRedo(target);
 
 UIALogger.logDebug("退出登陆状态");
 UIATarget.localTarget().pushTimeout(5);
