@@ -29,13 +29,13 @@ var UIALogin = {
 	    UIATarget.localTarget().popTimeout();
 	    target.frontMostApp().mainWindow().textFields()["Username"].tap();
 	    target.frontMostApp().keyboard().typeString("1");
-	    target.frontMostApp().keyboard().typeString("23\n");
+	    target.frontMostApp().keyboard().typeString("2\n");
 	    target.frontMostApp().keyboard().typeString("1");
 	    target.frontMostApp().keyboard().typeString("23456\n");
 
 	    UIALogger.logStart("用户登陆");
 	    target.frontMostApp().mainWindow().textFields()["Username"].tap();
-	    target.frontMostApp().keyboard().typeString("@\n");
+	    target.frontMostApp().keyboard().typeString("3@\n");
 	    target.frontMostApp().mainWindow().buttons()["Login"].tap();
 	    UIALogger.logPass("用户登陆");
     },

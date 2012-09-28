@@ -9,7 +9,6 @@ target.frontMostApp().tabBar().buttons()["我"].tap();
 var logoutBtn = target.frontMostApp().navigationBar().buttons()["注销"];
 if(logoutBtn.checkIsValid()) {
 	logoutBtn.tap();
-	target.delay(1);
 }
 
 UIATarget.localTarget().pushTimeout(5);
@@ -47,6 +46,4 @@ UIALogger.logDebug("退出登陆状态");
 UIATarget.localTarget().pushTimeout(5);
 target.frontMostApp().navigationBar().rightButton().tap();
 UIATarget.localTarget().popTimeout();
-UIALogger.logPass("用户中心");
-
-
+UIALogger.logPass("用户中心");	

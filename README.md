@@ -1,4 +1,4 @@
-gs-client-test
+#gs-client-test
 ==============
 
 #[金石教育手机版本](https://github.com/MengWei/gs-client)测试工程
