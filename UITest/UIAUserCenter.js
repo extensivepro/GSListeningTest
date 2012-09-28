@@ -28,6 +28,12 @@ if(cell.isValid()) {
     UIALogger.logFail("同步考试记录");
 }
 
+UIALogger.logStart("用户资料");
+cell.tap();
+UIAUserProfile.update(target);
+UIALogger.logPass("用户资料");
+
+
 UIALogger.logStart("听力记录折叠");
 cell = target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '听写记录'");
 cell.tap();
@@ -41,6 +47,9 @@ UIAListeningRecord.showComplete(target);
 cell = target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '错题重做试卷'");
 cell.tap();
 UIAListeningRecord.showRedo(target);
+
+target.frontMostApp().mainWindow().tableViews()["空列表"].cells()["用户资料, 123@"].tap();
+UIAUserProfile()
 
 UIALogger.logDebug("退出登陆状态");
 UIATarget.localTarget().pushTimeout(5);
