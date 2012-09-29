@@ -6,7 +6,7 @@ UIATarget.onAlert = function onAlert(alert) {
 	UIALogger.logDebug(info.name());
 	if(info.name() == "请输入用户名和密码") {
 		alert.defaultButton().tap();
-        UIALogger.logMessage("用户名和密码为空验证");
+        UIALogger.logDebug("用户名和密码为空验证");
 		return true;
 	} else if(info.name() == "用户名必须是电子邮件") {
 		alert.defaultButton().tap();
@@ -46,7 +46,7 @@ var UIALogin = {
 	    target.frontMostApp().keyboard().typeString("23@\n");
 	    target.frontMostApp().keyboard().typeString("1");
 	    target.frontMostApp().keyboard().typeString("23456\n");
-	    target.frontMostApp().mainWindow().buttons()["Login"].tap();		
+//	    target.frontMostApp().mainWindow().buttons()["Login"].tap();		
 	    UIALogger.logPass("用户快速登陆");	
 	}
 };

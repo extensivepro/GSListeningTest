@@ -1,3 +1,20 @@
+var UIAUserProfile = {
+	update:function(target) {
+        UIALogger.logStart("更新用户资料");
+		target.frontMostApp().mainWindow().tableViews()["空列表"].cells()["姓名"].textFields()[0].tap();
+		target.frontMostApp().keyboard().typeString("3");
+		target.frontMostApp().keyboard().typeString("\n");
+		target.frontMostApp().navigationBar().rightButton().tap();
+		
+		target.delay(1);//Must do, otherwise alert will not be catch.
+	},
+	exit:function() {
+		UIALogger.logDebug("退出用户资料界面");
+		var target = UIATarget.localTarget();
+		target.frontMostApp().navigationBar().leftButton().tap();		
+	}
+}
+
 UIATarget.onAlert = function onAlert(alert) {
 	var title = alert.name();
 	
@@ -6,15 +23,11 @@ UIATarget.onAlert = function onAlert(alert) {
 	UIALogger.logDebug(info.name());
 	if(info.name() == "更新资料成功") {
 		alert.defaultButton().tap();
-        UIALogger.logMessage("更新资料成功");
+        UIALogger.logDebug("更新资料成功");
         UIALogger.logPass("更新用户资料成功");
+		UIAUserProfile.exit();
 		return true;
-	} else if(info.name() == "用户名必须是电子邮件") {
-		alert.defaultButton().tap();
-        UIALogger.logMessage("用户名必须是电子邮件验证");
-        UIALogger.logPass("用户登陆输入验证");
-		return true;
-    }
+	}
 	// add a warning to the log for each alert encountered
     UIALogger.logWarning("Alert with title '" + title + "' encountered!");
     
@@ -22,14 +35,3 @@ UIATarget.onAlert = function onAlert(alert) {
     return false;
 }
 
-var UIAUserProfile = {
-	update:function(target) {
-        UIALogger.logStart("更新用户资料成功");
-		target.frontMostApp().mainWindow().tableViews()["空列表"].cells()["姓名"].textFields()[0].tap();
-		target.frontMostApp().keyboard().typeString("3");
-		target.frontMostApp().keyboard().typeString("\n");
-		target.frontMostApp().navigationBar().rightButton().tap();
-		
-		target.frontMostApp().navigationBar().leftButton().tap();
-	}
-}
