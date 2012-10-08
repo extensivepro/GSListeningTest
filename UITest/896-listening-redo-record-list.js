@@ -3,7 +3,6 @@
 
 UIALogger.logStart("CASE #896::听力考试错题重做记录列表");
 var target = UIATarget.localTarget();
-target.frontMostApp().logElementTree();
 
 UIAUserCenter.relogin();
 

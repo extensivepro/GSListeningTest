@@ -25,7 +25,6 @@ UIATarget.onAlert = function onAlert(alert) {
 		alert.defaultButton().tap();
         UIALogger.logDebug("更新资料成功");
         UIALogger.logPass("更新用户资料成功");
-		UIAUserProfile.exit();
 		return true;
 	}
 	// add a warning to the log for each alert encountered

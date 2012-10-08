@@ -3,7 +3,6 @@
 
 UIALogger.logStart("CASE #893::听力考试记录列表");
 var target = UIATarget.localTarget();
-target.frontMostApp().logElementTree();
 
 UIAUserCenter.relogin();
 
