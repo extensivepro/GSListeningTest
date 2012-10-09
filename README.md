@@ -1,15 +1,15 @@
-#gs-client-test
+#GSListeningTest
 ==============
 
-#[金石教育手机版本](https://github.com/MengWei/gs-client)测试工程
+#[金石听力iPhone版本](https://github.com/extensivepro/GSListening)测试工程
 
 ##安装及使用
 ```bash
 //clone gold stone client test project
-git clone git@github.com:extensivepro/gs-client-test.git
-cd gs-client-test/Mother-May-UI
+git clone git@github.com:extensivepro/GSListening.git
+cd GSListeningTest/Mother-May-UI
 //enter info for config
-./setup.sh
+./setup.sh GSListening test.log
 //run test
 ./run.sh
 ```
