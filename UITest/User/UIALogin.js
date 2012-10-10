@@ -28,25 +28,24 @@ var UIALogin = {
 	    target.frontMostApp().mainWindow().buttons()["Login"].tap();
 	    UIATarget.localTarget().popTimeout();
 	    target.frontMostApp().mainWindow().textFields()["Username"].tap();
-	    target.frontMostApp().keyboard().typeString("1");
-	    target.frontMostApp().keyboard().typeString("2\n");
-	    target.frontMostApp().keyboard().typeString("1");
-	    target.frontMostApp().keyboard().typeString("23456\n");
+	    target.frontMostApp().keyboard().typeString("7");
+	    target.frontMostApp().keyboard().typeString("46905262\n");
+	    target.frontMostApp().keyboard().typeString("9");
+	    target.frontMostApp().keyboard().typeString("80523\n");
 
 	    UIALogger.logStart("用户登陆");
 	    target.frontMostApp().mainWindow().textFields()["Username"].tap();
-	    target.frontMostApp().keyboard().typeString("3@\n");
+	    target.frontMostApp().keyboard().typeString("@qq.com\n");
 	    target.frontMostApp().mainWindow().buttons()["Login"].tap();
 	    UIALogger.logPass("用户登陆");
     },
 	loginFast:function(target) {
 	    UIALogger.logStart("用户快速登陆");
 	    target.frontMostApp().mainWindow().textFields()["Username"].tap();
-	    target.frontMostApp().keyboard().typeString("1");
-	    target.frontMostApp().keyboard().typeString("23@\n");
-	    target.frontMostApp().keyboard().typeString("1");
-	    target.frontMostApp().keyboard().typeString("23456\n");
-//	    target.frontMostApp().mainWindow().buttons()["Login"].tap();		
+	    target.frontMostApp().keyboard().typeString("7");
+	    target.frontMostApp().keyboard().typeString("46905262@qq.com\n");
+	    target.frontMostApp().keyboard().typeString("9");
+	    target.frontMostApp().keyboard().typeString("80523\n");
 	    UIALogger.logPass("用户快速登陆");	
 	}
 };

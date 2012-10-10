@@ -6,10 +6,6 @@ var UIAUserCenter = {
 
 		var target = UIATarget.localTarget();
 
-		do {
-			target.delay(1)
-			var tabBar = target.frontMostApp().tabBar();
-		} while(!tabBar.checkIsValid())
 		target.frontMostApp().tabBar().buttons()["我"].tap();
 		var logoutBtn = target.frontMostApp().navigationBar().buttons()["注销"];
 		if(logoutBtn.checkIsValid()) {
