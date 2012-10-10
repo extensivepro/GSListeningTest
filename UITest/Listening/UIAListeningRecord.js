@@ -2,7 +2,10 @@
 
 var traverseCells = function(target, tableView) {
 	for(var i = 0, len = tableView.cells().length; i < len; i++ ) {
-		if(tableView.cells()[i].isVisible() === 0) break;
+		if(tableView.cells()[i].isVisible() === 0) {
+			// UIALogger.logDebug("=====")
+			tableView.cells()[i].staticTexts()[0].scrollToVisible();
+		}
 		tableView.cells()[i].tap()
 		UIAListeningResult.show(target)
 	}		
