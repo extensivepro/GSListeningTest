@@ -1,8 +1,26 @@
 UIALogger.logStart("CASE #964::考试完成后对题回顾");
 
 var target=UIATarget.localTarget();
+//!!!onAlert事件!!!
+UIATarget.onAlert = function onAlert(alert) {
+	var title = alert.name();
+	
+    // test if your script should handle the alert, and if so, return true
+	var info = alert.staticTexts()[1];
+	UIALogger.logDebug(info.name());
+	if(info.name() == "没有对题") {
+		alert.defaultButton().tap();
+        UIALogger.logDebug("对题数为零验证");
+		return true;
+	} 
+	
+	// add a warning to the log for each alert encountered
+    UIALogger.logWarning("Alert with title '" + title + "' encountered!");
+    
+    // otherwise, return false to use the default handler
+    return false;
+}
 
-/*
 var traverseCells=function(target,tableView){
 	for(var i=0,len=tableView.cells().length;i<len;i++){
 		if(tableView.cells()[i].isVisible()===0)  break;
@@ -10,7 +28,6 @@ var traverseCells=function(target,tableView){
 		target.delay(2);
 	}
 }
-*/
 
 target.frontMostApp().tabBar().buttons()["我"].tap();
 if(target.frontMostApp().navigationBar().buttons()["注销"].checkIsValid()){
@@ -37,15 +54,14 @@ target.delay(60);
 
 UIALogger.logMessage("听力考试结束，显示听写成绩单");
 
-target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '对题回顾'").tap();
-//if(target.frontMostApp().mainWindow().buttons()["好的"].isValid())
-	//target.frontMostApp().mainWindow().buttons()["好的"].tap();
-	//break;
+var cell=target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '对题回顾:0/'");
+if(cell.checkIsValid()){
+	cell.tap();
+}else{
+	target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '对题回顾'").tap();
+	target.delay(2);
+	traverseCells(target,target.frontMostApp().mainWindow().tableViews()[0]);
+	target.frontMostApp().navigationBar().buttons()["听写成绩单"].tap();
+}
 
-
-
-//traverseCells(target,target.frontMostApp().mainWindow().tableViews()[0]);
-//target.frontMostApp().navigationBar().buttons()["听写成绩单"].tap();
-
-
-UIALogger.logPass("CASE ##964::考试完成后对题回顾");
+UIALogger.logPass("CASE #964::考试完成后对题回顾");
