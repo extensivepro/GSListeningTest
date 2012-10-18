@@ -5,7 +5,7 @@ UIALogger.logStart("CASE #969::显示听写站中的试卷");
 var target=UIATarget.localTarget();
 
 var traverseCells = function(target,tableView){
-	for(var i=2,len=tableView.cells().length;i<len;i++){
+	for(var i=2/*,len=tableView.cells().length*/;i<7/*len*/;i++){
 		if(tableView.cells()[i].isVisible()===0)  break;
 		tableView.cells()[i].tap();
 		target.delay(2);

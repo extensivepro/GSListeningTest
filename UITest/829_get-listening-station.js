@@ -4,7 +4,7 @@ UIALogger.logStart("CASE #829::获取我的好友听写站列表");
 
 var traverseCells=function(target,tableView){
 	//var myFriendsBtn=UIATarget.localTarget().frontMostApp().navigationBar().leftButton();
-	for(var i=2,len=tableView.cells().length;i<len;i++){
+	for(var i=2/*,len=tableView.cells().length*/;i</*len*/7;i++){
 		if(tableView.cells()[i].isVisible()===0)
 			break;
 		tableView.cells()[i].tap();
