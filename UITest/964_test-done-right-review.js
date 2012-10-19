@@ -1,7 +1,7 @@
 UIALogger.logStart("CASE #964::考试完成后对题回顾");
 
 var target=UIATarget.localTarget();
-//!!!onAlert事件!!!
+
 UIATarget.onAlert = function onAlert(alert) {
 	var title = alert.name();
 	
