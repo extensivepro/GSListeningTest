@@ -64,4 +64,6 @@ if(cell.checkIsValid()){
 	target.frontMostApp().navigationBar().buttons()["听写成绩单"].tap();
 }
 
+target.delay(5);
+
 UIALogger.logPass("CASE #966::考试完成后错题回顾");

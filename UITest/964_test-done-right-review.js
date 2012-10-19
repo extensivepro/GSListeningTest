@@ -1,7 +1,7 @@
 UIALogger.logStart("CASE #964::考试完成后对题回顾");
 
 var target=UIATarget.localTarget();
-
+//!!!onAlert事件!!!
 UIATarget.onAlert = function onAlert(alert) {
 	var title = alert.name();
 	
@@ -63,5 +63,7 @@ if(cell.checkIsValid()){
 	traverseCells(target,target.frontMostApp().mainWindow().tableViews()[0]);
 	target.frontMostApp().navigationBar().buttons()["听写成绩单"].tap();
 }
+
+target.delay(5);
 
 UIALogger.logPass("CASE #964::考试完成后对题回顾");
