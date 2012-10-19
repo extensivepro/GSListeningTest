@@ -22,7 +22,7 @@ UIATarget.onAlert=function onAlert(alert){
 
 var traverseCells=function(target,tableView){
 	for(var i=0;i<8;i++){
-		if(tableView.cells()[i].isVisible()===0)  break;
+		if(tableView.cells()[i].name()===null)  break;
 		tableView.cells()[i].tap();
 		target.delay(1);
 	}
@@ -49,7 +49,22 @@ target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("n
 target.delay(2);
 for(var i=0;i<8;i++)
 {
-	if(target.frontMostApp().mainWindow().tableViews()[0].cells()[i].isVisible()===0)  break;
+	if(target.frontMostApp().mainWindow().tableViews()[0].cells()[i].name()===null)  break;
+	target.frontMostApp().mainWindow().tableViews()[0].cells()[i].tap();
+	target.delay(2);
+	faultsReview();
+	target.delay(5);
+	target.frontMostApp().navigationBar().buttons()["听力考试记录"].tap();
+}
+target.delay(2);
+target.frontMostApp().navigationBar().buttons()["用户中心"].tap();
+
+//错题重做试卷成绩单下的错题回顾
+target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '错题重做试卷'").tap();
+target.delay(2);
+for(var i=0;i<8;i++)
+{
+	if(target.frontMostApp().mainWindow().tableViews()[0].cells()[i].name()===null)  break;
 	target.frontMostApp().mainWindow().tableViews()[0].cells()[i].tap();
 	target.delay(2);
 	faultsReview();
