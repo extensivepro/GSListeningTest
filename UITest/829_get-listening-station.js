@@ -4,7 +4,7 @@ UIALogger.logStart("CASE #829::获取我的好友听写站列表");
 
 var traverseCells=function(target,tableView){
 	//var myFriendsBtn=UIATarget.localTarget().frontMostApp().navigationBar().leftButton();
-	for(var i=2/*,len=tableView.cells().length*/;i</*len*/7;i++){
+	for(var i=1,len=tableView.cells().length;i<len;i++){
 		if(tableView.cells()[i].isVisible()===0)
 			break;
 		tableView.cells()[i].tap();
@@ -21,7 +21,7 @@ UIAUserCenter.relogin();
 
 target.frontMostApp().tabBar().buttons()["好友"].tap();
 
-target.frontMostApp().mainWindow().tableViews()[0].cells()[1].tap();
+target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();
 
 traverseCells(target,target.frontMostApp().mainWindow().tableViews()[0]);
 
