@@ -23,7 +23,7 @@ target.frontMostApp().mainWindow().tableViews()[0].cells()[1].tap();
 
 target.delay(3);
 
-target.frontMostApp().mainWindow().tableViews()[0].cells()[1].tap();
+target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();
 
 target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '开始考试'").tap();
 
