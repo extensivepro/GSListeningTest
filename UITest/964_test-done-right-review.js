@@ -1,3 +1,5 @@
+#import "User/UIAUserCenter.js"
+
 UIALogger.logStart("CASE #964::考试完成后对题回顾");
 
 var target=UIATarget.localTarget();
@@ -29,6 +31,7 @@ var traverseCells=function(target,tableView){
 	}
 }
 
+/*
 target.frontMostApp().tabBar().buttons()["我"].tap();
 if(target.frontMostApp().navigationBar().buttons()["注销"].checkIsValid()){
 	target.frontMostApp().navigationBar().buttons()["注销"].tap();
@@ -39,6 +42,9 @@ target.frontMostApp().keyboard().typeString("1");
 target.frontMostApp().keyboard().typeString("23@\n");
 target.frontMostApp().keyboard().typeString("1");
 target.frontMostApp().keyboard().typeString("23456\n");
+*/
+
+UIAUserCenter.relogin();
 
 target.frontMostApp().tabBar().buttons()["好友"].tap();
 target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();
