@@ -5,8 +5,8 @@ UIALogger.logStart("CASE #830::打开未下载完成的听力试卷");
 UIAUserCenter.relogin();
 var target=UIATarget.localTarget();
 target.frontMostApp().tabBar().buttons()["好友"].tap();
-target.frontMostApp().mainWindow().tableViews()[0].cells()[1].tap();
-target.frontMostApp().mainWindow().tableViews()[0].cells()[3].tap();
+target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();
+target.frontMostApp().mainWindow().tableViews()[0].cells()[2].tap();
 
 target.delay(2);
 
