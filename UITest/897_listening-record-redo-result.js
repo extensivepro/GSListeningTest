@@ -3,7 +3,7 @@
 UIALogger.logStart("CASE #897::听力考试错题重做记录查看成绩单");
 
 var traverseCells=function(target,tableView){
-	for(var i=0,len=tableView.cells().length;i<len;i++){
+	for(var i=0/*,len=tableView.cells().length*/;/*i<len*/i<8;i++){
 		if(tableView.cells()[i].isVisible()===0) break;
 		tableView.cells()[i].tap();
 		UIATarget.localTarget().frontMostApp().navigationBar().buttons()["听力考试记录"].tap();
