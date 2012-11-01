@@ -16,6 +16,9 @@ UIAUserCenter.relogin();
 var target=UIATarget.localTarget();
 target.frontMostApp().tabBar().buttons()["好友"].tap();
 
+UIALogger.logMessage("刷新记录")
+target.frontMostApp().mainWindow().tableViews()[0].dragInsideWithOptions({startOffset:{x:0.64, y:0.56}, endOffset:{x:0.71, y:0.91}});
+
 traverseCells(target,target.frontMostApp().mainWindow().tableViews()[0]);
 
 UIALogger.logPass("CASE #827::登录状态下获取我的好友信息");

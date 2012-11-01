@@ -10,11 +10,15 @@ target.frontMostApp().tabBar().buttons()["我"].tap();
 target.delay(2);
 target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '已做试卷'").tap();
 //查看异地听写记录是否上传，已做试卷记录是否进行了更新
+UIALogger.logMessage("刷新记录")
+target.frontMostApp().mainWindow().tableViews()[0].dragInsideWithOptions({startOffset:{x:0.64, y:0.56}, endOffset:{x:0.71, y:0.91}});
 target.delay(20);
 target.frontMostApp().navigationBar().leftButton().tap();
 target.delay(1);
 target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '错题重做试卷'").tap();
 //查看异地错题重做记录是否上传，错题重做记录是否进行了更新
+UIALogger.logMessage("刷新记录")
+target.frontMostApp().mainWindow().tableViews()[0].dragInsideWithOptions({startOffset:{x:0.64, y:0.56}, endOffset:{x:0.71, y:0.91}});
 target.delay(20);
 target.frontMostApp().navigationBar().leftButton().tap();
 

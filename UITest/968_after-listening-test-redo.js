@@ -39,9 +39,13 @@ target.frontMostApp().keyboard().typeString("23456\n");
 UIAUserCenter.relogin();
 target.frontMostApp().tabBar().buttons()["好友"].tap();
 target.delay(1);
+UIALogger.logMessage("刷新记录")
+target.frontMostApp().mainWindow().tableViews()[0].dragInsideWithOptions({startOffset:{x:0.64, y:0.56}, endOffset:{x:0.71, y:0.91}});
 target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();
 target.frontMostApp().mainWindow().tableViews()[0].cells()[1].tap();
 target.delay(2);
+UIALogger.logMessage("刷新记录")
+target.frontMostApp().mainWindow().tableViews()[0].dragInsideWithOptions({startOffset:{x:0.64, y:0.56}, endOffset:{x:0.71, y:0.91}});
 target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();
 target.delay(2);
 target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '开始考试'").tap();

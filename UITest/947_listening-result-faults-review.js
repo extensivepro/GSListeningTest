@@ -47,6 +47,8 @@ target.delay(1);
 //已做试卷成绩单下的错题回顾
 target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '已做试卷'").tap();
 target.delay(2);
+UIALogger.logMessage("刷新记录")
+target.frontMostApp().mainWindow().tableViews()[0].dragInsideWithOptions({startOffset:{x:0.64, y:0.56}, endOffset:{x:0.71, y:0.91}});
 for(var i=0;i<8;i++)
 {
 	if(target.frontMostApp().mainWindow().tableViews()[0].cells()[i].name()===null)  break;
@@ -62,6 +64,8 @@ target.frontMostApp().navigationBar().buttons()["用户中心"].tap();
 //错题重做试卷成绩单下的错题回顾
 target.frontMostApp().mainWindow().tableViews()[0].cells().firstWithPredicate("name beginswith '错题重做试卷'").tap();
 target.delay(2);
+UIALogger.logMessage("刷新记录")
+target.frontMostApp().mainWindow().tableViews()[0].dragInsideWithOptions({startOffset:{x:0.64, y:0.56}, endOffset:{x:0.71, y:0.91}});
 for(var i=0;i<8;i++)
 {
 	if(target.frontMostApp().mainWindow().tableViews()[0].cells()[i].name()===null)  break;
