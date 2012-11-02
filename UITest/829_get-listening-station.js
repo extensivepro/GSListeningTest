@@ -9,7 +9,9 @@ var traverseCells=function(target,tableView){
 			break;
 		tableView.cells()[i].tap();
 		UIALogger.logMessage("进入听写站");
-		//UIATarget.localTarget().delay(5);
+		UIALogger.logMessage("刷新记录");
+		UIATarget.localTarget().frontMostApp().mainWindow().tableViews()[0].dragInsideWithOptions({startOffset:{x:0.64, y:0.56}, endOffset:{x:0.71, y:0.91}});
+		UIATarget.localTarget().delay(1);
 		UIATarget.localTarget().frontMostApp().navigationBar().leftButton().tap();
 		
 	}
